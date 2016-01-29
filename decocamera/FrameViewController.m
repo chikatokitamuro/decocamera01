@@ -56,83 +56,8 @@
     return cell;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    // 次で実装します。
-    // カメラが使用できるかどうか判定。
-    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        
-        // カメラを生成
-        UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
-        
-        // デリゲートを自分自身に設定
-        imagePickerController.delegate = self;
-        
-        // 写真モードを選ぶ。（映像モードもある）
-        imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-        
-        // ずれ防止
-        imagePickerController.cameraViewTransform = CGAffineTransformTranslate(imagePickerController.cameraViewTransform, 0, 50);
-        // UIImagePickerControllerは縦長限定になりますので、正方形にするため、画面を隠します。
-        CGRect rect = imagePickerController.view.bounds;
-        rect.size.height -= imagePickerController.navigationBar.bounds.size.height;
-        CGFloat barHeight = (rect.size.height - rect.size.width) / 2;
-        UIGraphicsBeginImageContext(rect.size);
-        [[UIColor colorWithWhite:0 alpha:1] set];
-        UIRectFillUsingBlendMode(CGRectMake(0, 0, rect.size.width, barHeight), kCGBlendModeNormal);
-        UIRectFillUsingBlendMode(CGRectMake(0, rect.size.height - barHeight, rect.size.width, barHeight/1.48), kCGBlendModeNormal);
-        UIImage *rimImage = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        
-        // 画面上にフレームなどを置くための土台を作ります。
-        UIView *baseView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, rect.size.width, rect.size.height)];
-        
-        // 画面を隠す部分を準備します。
-        UIImageView *rimView = [[UIImageView alloc] initWithFrame:rect];
-        rimView.image = rimImage;
-        [baseView addSubview:rimView];
-        
-        // フレームを準備します。
-        NSString *imgName = [NSString stringWithFormat:@"frame_%02ld.png", (long)[self.frameArray[indexPath.row] integerValue]];
-        UIImageView *frameView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imgName]];
-        frameView.frame = (CGRect){0, barHeight, rect.size.width, rect.size.width};
-        [baseView addSubview:frameView];
-        
-        // 画面上にフレームなどを置きます。
-        [imagePickerController setCameraOverlayView:baseView];
-        
-        // モーダルビューとしてカメラ画面を呼び出す
-        [self presentViewController:imagePickerController animated:YES completion:nil];
-        
-        
-    }
-    
-}
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    // 次で実装します。
-    // 生成
-    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
-    
-    // デリゲートを自分自身に設定
-    imagePickerController.delegate = self;
-    
-    imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-    
-    // ずれ防止
-    imagePickerController.cameraViewTransform = CGAffineTransformTranslate(imagePickerController.cameraViewTransform, 0, 50);
-    
-    // UIImagePickerControllerは縦長限定になりますので、正方形にするため、画面を隠します。
-    CGRect rect = imagePickerController.view.bounds;
-    rect.size.height -= imagePickerController.navigationBar.bounds.size.height;
-    CGFloat barHeight = (rect.size.height - rect.size.width) / 2;
-    UIGraphicsBeginImageContext(rect.size);
-    [[UIColor colorWithWhite:0 alpha:1] set];
-    UIRectFillUsingBlendMode(CGRectMake(0, 0, rect.size.width, barHeight), kCGBlendModeNormal);
-    UIRectFillUsingBlendMode(CGRectMake(0, rect.size.height - barHeight, rect.size.width, barHeight/1.48), kCGBlendModeNormal);
-    UIImage *rimImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    
     [picker dismissViewControllerAnimated:YES completion:nil];
     
     // 浮世絵フレームと写真は別になっているので合成しなければいけません。
@@ -171,6 +96,8 @@
     [self performSegueWithIdentifier:@"ImageView" sender:self];
 }
 
+
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     //Segueの特定
@@ -180,18 +107,5 @@
         nextViewController.editImage = self.editImage;
     }
 }
-
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
