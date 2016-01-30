@@ -20,6 +20,19 @@
 @end
 
 @implementation ImageViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    self.imageView.image = self.editImage;
+    self.isGray = NO;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 - (IBAction)saveButtonAction:(id)sender {
     SEL selector = @selector(onCompleteCapture:didFinishSavingWithError:contextInfo:);
     //画像を保存する
@@ -85,17 +98,7 @@
 }
 
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.imageView.image = self.editImage;
-    self.isGray = NO;
-}
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 /*
 #pragma mark - Navigation
