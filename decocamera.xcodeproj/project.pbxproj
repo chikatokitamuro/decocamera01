@@ -30,7 +30,6 @@
 		BEC70C511C52FD0900F4260B /* frame_14.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC70C401C52FD0900F4260B /* frame_14.png */; };
 		BEC70C521C52FD0900F4260B /* frame_15.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC70C411C52FD0900F4260B /* frame_15.png */; };
 		BEC70C531C52FD0900F4260B /* frame_16.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC70C421C52FD0900F4260B /* frame_16.png */; };
-		BEC70C561C53129400F4260B /* FrameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC70C551C53129400F4260B /* FrameViewController.m */; };
 		BEC70C591C53138500F4260B /* FrameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC70C581C53138500F4260B /* FrameViewController.m */; };
 		BEC70C5C1C5313C500F4260B /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC70C5B1C5313C500F4260B /* ImageViewController.m */; };
 /* End PBXBuildFile section */
@@ -63,8 +62,6 @@
 		BEC70C401C52FD0900F4260B /* frame_14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame_14.png; sourceTree = "<group>"; };
 		BEC70C411C52FD0900F4260B /* frame_15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame_15.png; sourceTree = "<group>"; };
 		BEC70C421C52FD0900F4260B /* frame_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame_16.png; sourceTree = "<group>"; };
-		BEC70C541C53129400F4260B /* FrameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameViewController.h; sourceTree = "<group>"; };
-		BEC70C551C53129400F4260B /* FrameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameViewController.m; sourceTree = "<group>"; };
 		BEC70C571C53138500F4260B /* FrameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameViewController.h; sourceTree = "<group>"; };
 		BEC70C581C53138500F4260B /* FrameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameViewController.m; sourceTree = "<group>"; };
 		BEC70C5A1C5313C500F4260B /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
@@ -147,8 +144,6 @@
 				BEC70C401C52FD0900F4260B /* frame_14.png */,
 				BEC70C411C52FD0900F4260B /* frame_15.png */,
 				BEC70C421C52FD0900F4260B /* frame_16.png */,
-				BEC70C541C53129400F4260B /* FrameViewController.h */,
-				BEC70C551C53129400F4260B /* FrameViewController.m */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -245,7 +240,6 @@
 				BEC70C591C53138500F4260B /* FrameViewController.m in Sources */,
 				BEC70C221C52FC7600F4260B /* ViewController.m in Sources */,
 				BEC70C1F1C52FC7600F4260B /* AppDelegate.m in Sources */,
-				BEC70C561C53129400F4260B /* FrameViewController.m in Sources */,
 				BEC70C1C1C52FC7600F4260B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +387,7 @@
 				BEC70C301C52FC7600F4260B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

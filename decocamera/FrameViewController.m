@@ -45,9 +45,8 @@
     
     UICollectionViewCell *cell;
     
-    cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     
-    // CollectionView上のUIImageViewをタグを用いて取得します。
+    cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];    // CollectionView上のUIImageViewをタグを用いて取得します。
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
     NSString *imgName = [NSString stringWithFormat:@"frame_%02ld.png", (long)[self.frameArray[indexPath.row] integerValue]];
     UIImage *image = [UIImage imageNamed:imgName];
@@ -86,6 +85,45 @@
         UIImage *rimImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
+        
+        
+        //撮った写真を拡大、縮小する
+        //UIImage作成
+        UIImage *image =[UIImage imageNamed:@"sample.jpg"];
+        
+        // 画像の幅
+        CGFloat width = image.size.width;
+        // 画像の高さ
+        CGFloat height = image.size.height;
+        // 拡大・縮小率
+        CGFloat scale = 1.5f;
+        
+        //UIImageView作成
+        UIImageView *imageView =[[UIImageView alloc]initWithImage:image];
+        
+        // 画像サイズ変更
+        CGRect rect = CGRectMake(0, 0, width*scale, height*scale);
+        // ImageView frame をCGRectMakeで作った矩形に合わせる
+        imageView.frame = rect;
+        // view に ImageView を追加する
+        [self.view addSubview:imageView];
+        
+        
+        
+        
+        //撮影した写真の画像の明るさをUISliderなどで調整して保存できる
+        
+        GPUImagePicture *imagePicture = [[GPUImagePicture alloc] initWithImage:inputImage];
+        GPUImageBrightnessFilter *brightnessFilter = [[GPUImageBrightnessFilter alloc] init];
+        // Brightness ranges from -1.0 to 1.0, with 0.0 as the normal level
+        [brightnessFilter setBrightness:0.5];
+        [imagePicture addTarget:brightnessFilter];
+        [imagePicture processImage];
+        UIImage *outputImage = [brightnessFilter imageFromCurrentlyProcessedOutput];
+        
+        
+        
+        
         // 画面上にフレームなどを置くための土台を作ります。
         UIView *baseView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, rect.size.width, rect.size.height)];
         
@@ -109,6 +147,12 @@
 }
 
 
+
+        //sliderで明るさ調整する
+- (IBAction)brightSlider:(id)sender {
+    [self imagePicture];
+    
+}
 
 
 
@@ -143,6 +187,8 @@
     // 画像を描画します。
     [capturedImage drawAtPoint:CGPointMake(0, -barHeight)];
     capturedImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    //
     
     // 描画終了
     UIGraphicsEndImageContext();
