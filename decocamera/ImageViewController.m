@@ -97,7 +97,31 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
+- (IBAction)zoomButtonAction:(id)sender {
+    CGFloat scale = 1.25f;
+    self.imageView.transform = CGAffineTransformScale(self.imageView.transform, scale, scale);
 
+}
+
+- (IBAction)miniButtonAction:(id)sender {CGFloat scale = 0.75f;
+    self.imageView.transform = CGAffineTransformScale(self.imageView.transform, scale, scale);
+}
+
+
+- (IBAction)changeBrightSlider:(id)sender {
+    let value = brightSlider.value
+    let ci = CIImage(image: backImageView.image!)
+    let filter = CIFilter(name: "CIColorControls")!
+    filter.setValue(ci, forKey: kCIInputImageKey)
+    filter.setValue(value, forKey: "inputBrightness")
+    
+    let context = CIContext(options: nil)
+    let cgimg = context.createCGImage(filter.outputImage!, fromRect: filter.outputImage!.extent)
+    let img = UIImage(CGImage: cgimg, scale: 1.0, orientation: UIImageOrientation.Up)
+    backImageView.image = img
+    
+    brightLabel.text = "\(value)"
+}
 
 
 /*
