@@ -192,6 +192,7 @@
                     <connections>
                         <outlet property="grayButton" destination="Ai3-cx-EKN" id="BEf-tv-i0n"/>
                         <outlet property="imageView" destination="Vuh-xl-9RJ" id="j5G-3X-kXS"/>
+                        <outlet property="sliderbright" destination="E1n-GE-JDq" id="pkz-ua-uAQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="biz-3u-OC0" userLabel="First Responder" sceneMemberID="firstResponder"/>

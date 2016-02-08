@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *grayButton;
 @property (assign, nonatomic) BOOL isGray;
 
+@property (weak, nonatomic) IBOutlet UISlider *sliderbright;
+
 - (IBAction)saveButtonAction:(id)sender;
 - (IBAction)grayButtonAction:(id)sender;
 - (IBAction)backButtonAction:(id)sender;
@@ -109,8 +111,8 @@
 
 
 - (IBAction)changeBrightSlider:(id)sender {
-    let value = brightSlider.value
-    let ci = CIImage(image: backImageView.image!)
+    CGFloat value = self.slider.value;
+    let ci = CIImage(image: self.imageView!)
     let filter = CIFilter(name: "CIColorControls")!
     filter.setValue(ci, forKey: kCIInputImageKey)
     filter.setValue(value, forKey: "inputBrightness")
@@ -118,7 +120,7 @@
     let context = CIContext(options: nil)
     let cgimg = context.createCGImage(filter.outputImage!, fromRect: filter.outputImage!.extent)
     let img = UIImage(CGImage: cgimg, scale: 1.0, orientation: UIImageOrientation.Up)
-    backImageView.image = img
+    self.imageView = img
     
     brightLabel.text = "\(value)"
 }
