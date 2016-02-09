@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE1812711C68C7D00003DA30 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1812701C68C7D00003DA30 /* CoreImage.framework */; };
 		BEC70C1C1C52FC7600F4260B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC70C1B1C52FC7600F4260B /* main.m */; };
 		BEC70C1F1C52FC7600F4260B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC70C1E1C52FC7600F4260B /* AppDelegate.m */; };
 		BEC70C221C52FC7600F4260B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC70C211C52FC7600F4260B /* ViewController.m */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE1812701C68C7D00003DA30 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		BEC70C171C52FC7600F4260B /* decocamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = decocamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEC70C1B1C52FC7600F4260B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BEC70C1D1C52FC7600F4260B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE1812711C68C7D00003DA30 /* CoreImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +85,7 @@
 		BEC70C0E1C52FC7600F4260B = {
 			isa = PBXGroup;
 			children = (
+				BE1812701C68C7D00003DA30 /* CoreImage.framework */,
 				BEC70C191C52FC7600F4260B /* decocamera */,
 				BEC70C181C52FC7600F4260B /* Products */,
 			);
