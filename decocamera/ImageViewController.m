@@ -125,10 +125,10 @@
     let cgimg = context.createCGImage(filter.outputImage!, fromRect: filter.outputImage!.extent)
     let img = UIImage(CGImage: cgimg, scale: 1.0, orientation: UIImageOrientation.Up)*/
     
-    self.imageView = img
+    //self.imageView = img
     
-    brightLabel.text = "\(value)"
-}
+    //brightLabel.text = "\(value)"
+//}
 
 /*
 #pragma mark - Navigation
