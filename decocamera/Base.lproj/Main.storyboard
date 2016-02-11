@@ -148,6 +148,12 @@
                                     <action selector="zoomButtonAction:" destination="Nyu-5T-5Vn" eventType="touchUpInside" id="2c0-gK-4Jl"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="E1n-GE-JDq">
+                                <rect key="frame" x="239" y="472" width="118" height="31"/>
+                                <connections>
+                                    <action selector="changeBrightSlider:" destination="Nyu-5T-5Vn" eventType="valueChanged" id="Mkp-aD-dch"/>
+                                </connections>
+                            </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAT-nF-cOm">
                                 <rect key="frame" x="377" y="537" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -158,12 +164,6 @@
                                     <action selector="miniButtonAction:" destination="Nyu-5T-5Vn" eventType="touchUpInside" id="lql-96-t7c"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="E1n-GE-JDq">
-                                <rect key="frame" x="239" y="472" width="118" height="31"/>
-                                <connections>
-                                    <action selector="changeBrightSlider:" destination="Nyu-5T-5Vn" eventType="valueChanged" id="Mkp-aD-dch"/>
-                                </connections>
-                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -180,7 +180,6 @@
                             <constraint firstItem="qpK-9w-MXh" firstAttribute="leading" secondItem="he0-AJ-2tq" secondAttribute="leading" constant="9" id="dyZ-hD-koV"/>
                             <constraint firstAttribute="trailing" secondItem="PdI-Qf-QaG" secondAttribute="trailing" constant="5" id="frk-g9-cpL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="V4R-qi-VFb" secondAttribute="trailing" constant="257" id="kmp-DM-Pcf"/>
-                            <constraint firstItem="V4R-qi-VFb" firstAttribute="top" secondItem="6LA-mg-kqC" secondAttribute="bottom" constant="498" id="stn-wv-cAl"/>
                             <constraint firstItem="PJx-21-UyT" firstAttribute="top" secondItem="Vuh-xl-9RJ" secondAttribute="bottom" constant="36" id="uah-aT-JSf"/>
                             <constraint firstItem="Ai3-cx-EKN" firstAttribute="leading" secondItem="he0-AJ-2tq" secondAttribute="leadingMargin" constant="257" id="vCC-JI-2Yz"/>
                             <constraint firstItem="qpK-9w-MXh" firstAttribute="top" secondItem="he0-AJ-2tq" secondAttribute="top" id="vw7-Ss-Hb5"/>
