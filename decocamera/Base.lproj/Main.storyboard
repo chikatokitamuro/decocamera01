@@ -18,23 +18,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="HGv-03-4JO">
-                                <rect key="frame" x="9" y="6" width="582" height="587"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="HGv-03-4JO">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="A2l-AW-mQs">
-                                <rect key="frame" x="34" y="20" width="532" height="548"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="A2l-AW-mQs">
+                                <rect key="frame" x="8" y="28" width="584" height="564"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="muX-0N-kr5">
-                                    <size key="itemSize" width="434" height="503"/>
+                                    <size key="itemSize" width="120" height="120"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="0iF-bq-IOx">
-                                        <rect key="frame" x="49" y="0.0" width="434" height="503"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="434" height="503"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jWu-1q-sV5">
@@ -53,6 +53,28 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="A2l-AW-mQs" secondAttribute="trailing" constant="20" id="6zu-DA-b58"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HGv-03-4JO" secondAttribute="bottom" id="7vt-Ug-rhj"/>
+                            <constraint firstItem="A2l-AW-mQs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="QvP-9k-rxG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="A2l-AW-mQs" secondAttribute="bottom" constant="20" id="Se2-zt-VRt"/>
+                            <constraint firstItem="A2l-AW-mQs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aHo-zV-hm3"/>
+                            <constraint firstItem="HGv-03-4JO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="d0H-ZR-sjs"/>
+                            <constraint firstItem="A2l-AW-mQs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="hhK-Me-DQt"/>
+                            <constraint firstItem="A2l-AW-mQs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="jMo-rw-sqL"/>
+                            <constraint firstAttribute="trailing" secondItem="A2l-AW-mQs" secondAttribute="trailing" id="jXu-S2-1xm"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="A2l-AW-mQs" secondAttribute="bottom" id="mUn-sk-KwW"/>
+                            <constraint firstItem="HGv-03-4JO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="r5k-q7-nnG"/>
+                            <constraint firstAttribute="trailing" secondItem="HGv-03-4JO" secondAttribute="trailing" id="uz5-qT-1AX"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6zu-DA-b58"/>
+                                <exclude reference="aHo-zV-hm3"/>
+                                <exclude reference="jMo-rw-sqL"/>
+                                <exclude reference="Se2-zt-VRt"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="0uY-2X-FrJ" propertyAccessControl="none"/>
                     <connections>
