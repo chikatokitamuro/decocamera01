@@ -110,8 +110,20 @@
     self.imageView.transform = CGAffineTransformScale(self.imageView.transform, scale, scale);
 }
 
-- (IBAction)changeBrightSlider:(id)sender { CGFloat value = self.sliderbright.value; CIImage *ciImage = [[CIImage alloc] initWithImage:self.imageView.image]; //変換する画像ファイル名 CIFilter *ciFilter = [CIFilter filterWithName:@"CIColorMonochrome" //フィルター名 keysAndValues:kCIInputImageKey, ciImage, @"inputColor", [CIColor colorWithRed:0.75 green:0.75 blue:0.75], //パラメータ @"inputIntensity", [NSNumber numberWithFloat:value], //パラメータ nil ]; CIContext *ciContext = [CIContext contextWithOptions:nil]; CGImageRef cgimg = [ciContext createCGImage:[ciFilter outputImage] fromRect:[[ciFilter outputImage] extent]]; UIImage* monochroImage = [UIImage imageWithCGImage:cgimg scale:1.0f orientation:UIImageOrientationUp]; CGImageRelease(cgimg); self.imageView.image = monochroImage;}
-    
+- (IBAction)changeBrightSlider:(id)sender {
+    CGFloat value = self.sliderbright.value;
+    CIImage *ciImage = [[CIImage alloc] initWithImage:self.imageView.image]; //変換する画像ファイル名
+    CIFilter *ciFilter = [CIFilter filterWithName:@"CIColorMonochrome" //フィルター名
+                                    keysAndValues:kCIInputImageKey, ciImage,
+                          @"inputColor", [CIColor colorWithRed:0.75 green:0.75 blue:0.75], //パラメータ
+                          @"inputIntensity", [NSNumber numberWithFloat:value], //パラメータ
+                          nil
+                          ];
+    CIContext *ciContext = [CIContext contextWithOptions:nil];
+    CGImageRef cgimg = [ciContext createCGImage:[ciFilter outputImage] fromRect:[[ciFilter outputImage] extent]];
+    UIImage* monochroImage = [UIImage imageWithCGImage:cgimg scale:1.0f orientation:UIImageOrientationUp];
+    CGImageRelease(cgimg);
+    self.imageView.image = monochroImage;
 }
 /*- (IBAction)changeBrightSlider:(id)sender {
     CGFloat value = self.sliderbright.value;
